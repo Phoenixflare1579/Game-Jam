@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -502,7 +502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 112}
+  m_AnchoredPosition: {x: 450, y: 200}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422907838
@@ -712,7 +712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -124}
+  m_AnchoredPosition: {x: 450, y: -230}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707519338
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 970336268}
   - component: {fileID: 970336267}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fishing Rod
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1343,6 +1343,7 @@ GameObject:
   - component: {fileID: 1246854668}
   - component: {fileID: 1246854670}
   - component: {fileID: 1246854669}
+  - component: {fileID: 1246854671}
   m_Layer: 5
   m_Name: Current Weapon
   m_TagString: Untagged
@@ -1367,7 +1368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -266.33334}
+  m_AnchoredPosition: {x: 40, y: -477}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1246854669
@@ -1408,6 +1409,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246854667}
   m_CullTransparentMesh: 1
+--- !u!114 &1246854671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246854667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb037cf60902fb43b0e4dc643498171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons1:
+  - {fileID: 21300000, guid: 77c8ef88837c35f46b36d896939c5f92, type: 3}
+  - {fileID: 21300000, guid: 4ca03136334019a4ba30e1352ca526dc, type: 3}
+  - {fileID: 21300000, guid: ec7b179b8e5cb9f42a5b22cb5e20f283, type: 3}
+  - {fileID: 21300000, guid: 3e14c23784858984fad1188f67e0fc1d, type: 3}
+  - {fileID: 21300000, guid: 0a39fc3e400dc9a4fb2d4a926e8e8a04, type: 3}
+  - {fileID: 21300000, guid: 4fd1120f872806d439324f24c7e0b3a9, type: 3}
+  - {fileID: 21300000, guid: dc764140bb0e8bb49bfbd8a008843fa6, type: 3}
+  - {fileID: 21300000, guid: bf8a32642a52d3b45af63d136e72aefc, type: 3}
+  - {fileID: 21300000, guid: 6d982977f3b14fa4697097e6155462d3, type: 3}
+  weapons2: []
+  weapons3: []
+  weapons4: []
+  weapons5: []
 --- !u!1 &1380318738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1448,7 @@ GameObject:
   - component: {fileID: 1380318740}
   - component: {fileID: 1380318739}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,7 +1553,7 @@ GameObject:
   - component: {fileID: 1396629378}
   - component: {fileID: 1396629377}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,7 +1792,7 @@ GameObject:
   - component: {fileID: 1628001674}
   - component: {fileID: 1628001673}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

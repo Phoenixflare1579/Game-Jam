@@ -8,7 +8,7 @@ public class Player_MovewInput : MonoBehaviour
     public PlayerInput MyInput;
     public InputActionAsset MyMap;
     public Rigidbody rb;
-    public float speed = 3f;
+    public float speed;
     public Vector2 lastDirection;
 
     void Start()

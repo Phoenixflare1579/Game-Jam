@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class PlayerStats : MonoBehaviour
             Level++;
             MaxEXP += 100; //This is a test value we don't need to keep this number increase
         }
-
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 }

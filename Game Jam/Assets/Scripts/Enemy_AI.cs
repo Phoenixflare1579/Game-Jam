@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour
 {
     public Rigidbody rb;
-    private BoxCollider collider;
+    private BoxCollider Ecollider;
     public float speed = 2;
     public float dectectionRange;
     public Vector3 direction;
@@ -15,7 +15,7 @@ public class Enemy_AI : MonoBehaviour
     void Start()
     {
         this.transform.rotation = Quaternion.Euler(90, 0, 0);
-        collider = GetComponent<BoxCollider>();
+        Ecollider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player");
     }

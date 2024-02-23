@@ -41,7 +41,7 @@ public class WeaponTracker : MonoBehaviour
         }
         else if (player.GetComponent<PlayerStats>().Weapon == 5)
         {
-            this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Fishing Rod";
+            this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cannon";
             this.GetComponent<Image>().sprite = weapons5[player.GetComponent<PlayerStats>().Upgrade];
         }
     }

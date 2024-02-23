@@ -1423,15 +1423,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons1:
   - {fileID: 21300000, guid: 77c8ef88837c35f46b36d896939c5f92, type: 3}
-  - {fileID: 21300000, guid: 4ca03136334019a4ba30e1352ca526dc, type: 3}
+  - {fileID: 21300000, guid: 28961b2971252a04bb36b4edb1722adb, type: 3}
   - {fileID: 21300000, guid: ec7b179b8e5cb9f42a5b22cb5e20f283, type: 3}
   - {fileID: 21300000, guid: 3e14c23784858984fad1188f67e0fc1d, type: 3}
   - {fileID: 21300000, guid: 0a39fc3e400dc9a4fb2d4a926e8e8a04, type: 3}
-  - {fileID: 21300000, guid: 4fd1120f872806d439324f24c7e0b3a9, type: 3}
+  - {fileID: 21300000, guid: 1b688b6d85a5d8948b8674537674f8bf, type: 3}
   - {fileID: 21300000, guid: dc764140bb0e8bb49bfbd8a008843fa6, type: 3}
   - {fileID: 21300000, guid: bf8a32642a52d3b45af63d136e72aefc, type: 3}
   - {fileID: 21300000, guid: 6d982977f3b14fa4697097e6155462d3, type: 3}
-  weapons2: []
+  weapons2:
+  - {fileID: 21300000, guid: 6c458a38dd3294c40b6a38122594066e, type: 3}
+  - {fileID: 21300000, guid: 07d884d949eb6754ebfd9d9c0cc548a1, type: 3}
+  - {fileID: 21300000, guid: e1cd81a6731ca9444b8155f139289999, type: 3}
+  - {fileID: 21300000, guid: fb84f602cfdf6f042bb65e119facb947, type: 3}
+  - {fileID: 21300000, guid: 57f107ca048afab469a97016df119744, type: 3}
+  - {fileID: 21300000, guid: a9c27ae46c406f84380e61c70d610227, type: 3}
+  - {fileID: 21300000, guid: 9055d1f9756481e4398ae618a452aeda, type: 3}
+  - {fileID: 21300000, guid: b2ef795677db67d4b847c8cd85fce88e, type: 3}
+  - {fileID: 21300000, guid: 9f53f06b0aeb27f4ca33aa1027af5b68, type: 3}
   weapons3: []
   weapons4: []
   weapons5: []

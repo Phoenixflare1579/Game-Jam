@@ -14,10 +14,10 @@ public class Enemy_AI : MonoBehaviour
 
     void Start()
     {
+        this.transform.rotation = Quaternion.Euler(90, 0, 0);
         collider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player");
-        //Rigidbody targetRb = target.GetComponent<Rigidbody>();
     }
 
 

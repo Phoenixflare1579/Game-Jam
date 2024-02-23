@@ -36,11 +36,13 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.GetComponent<Player_MovewInput>().speed = Speed;
         if (EXP >= MaxEXP) 
         {
             EXP -= MaxEXP;
             Level++;
             MaxEXP += 100; //This is a test value we don't need to keep this number increase
         }
+
     }
 }

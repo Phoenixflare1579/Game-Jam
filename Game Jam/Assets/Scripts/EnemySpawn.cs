@@ -26,8 +26,10 @@ public class EnemySpawn : MonoBehaviour
             float xpos = transform.position.x;
             float zpos = transform.position.z;
             float radian = Random.Range(0f, 2 * Mathf.PI);
+
+            int randomFish = Random.Range(0, spawnables.Length);
             
-            Instantiate(spawnables[0], new Vector3(xpos + spawnRadius * Mathf.Cos(radian), 0, zpos + spawnRadius * Mathf.Sin(radian)), Quaternion.identity);
+            Instantiate(spawnables[randomFish], new Vector3(xpos + spawnRadius * Mathf.Cos(radian), 0, zpos + spawnRadius * Mathf.Sin(radian)), Quaternion.identity);
 
             yield return new WaitForSeconds(spawnTimer);
             spawnTimer -= spawnIncreaseRate * Mathf.Pow(spawnTimer, 2);

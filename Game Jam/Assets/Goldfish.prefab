@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4339019417314626860}
   - component: {fileID: 128691894270829462}
   - component: {fileID: 1518923366869521826}
-  m_Layer: 0
+  - component: {fileID: -7744638987646896163}
+  m_Layer: 6
   m_Name: Goldfish
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -155,3 +156,24 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 1
   attackDamage: 5
+--- !u!65 &-7744638987646896163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98523792450405201}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5935974, y: 1.2499998, z: 0.20000005}
+  m_Center: {x: -0.15007019, y: -0.25, z: -8.4703295e-22}

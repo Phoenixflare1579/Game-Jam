@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goldfish Walk
+  m_Name: Player Walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 8eb4af945eedc1649a33a2c8e5f446e0, type: 3}
+      value: {fileID: 21300000, guid: 48be6a1ce8f670348bb4b2f295cb9d55, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: 3394e7d0115f40447aa20c2c029caccd, type: 3}
-    - time: 0.3
-      value: {fileID: 21300000, guid: 3394e7d0115f40447aa20c2c029caccd, type: 3}
+      value: {fileID: 21300000, guid: bc2b13766f36a3548af6ee56587bbf06, type: 3}
+    - time: 0.28333333
+      value: {fileID: 21300000, guid: bc2b13766f36a3548af6ee56587bbf06, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 8eb4af945eedc1649a33a2c8e5f446e0, type: 3}
-    - {fileID: 21300000, guid: 3394e7d0115f40447aa20c2c029caccd, type: 3}
-    - {fileID: 21300000, guid: 3394e7d0115f40447aa20c2c029caccd, type: 3}
+    - {fileID: 21300000, guid: 48be6a1ce8f670348bb4b2f295cb9d55, type: 3}
+    - {fileID: 21300000, guid: bc2b13766f36a3548af6ee56587bbf06, type: 3}
+    - {fileID: 21300000, guid: bc2b13766f36a3548af6ee56587bbf06, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3166667
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

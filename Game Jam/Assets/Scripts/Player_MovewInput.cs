@@ -10,7 +10,6 @@ public class Player_MovewInput : MonoBehaviour
     public Rigidbody rb;
     public float speed;
     public Vector2 lastDirection;
-
     void Start()
     {
         MyInput = GetComponent<PlayerInput>();
@@ -29,6 +28,14 @@ public class Player_MovewInput : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector3(lastDirection.x, 0, lastDirection.y).normalized * speed;
+        if (lastDirection.x < 0)
+        {
+            this.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     public void Move(InputAction.CallbackContext c)

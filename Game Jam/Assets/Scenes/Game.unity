@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2514,9 +2514,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9055d1f9756481e4398ae618a452aeda, type: 3}
   - {fileID: 21300000, guid: b2ef795677db67d4b847c8cd85fce88e, type: 3}
   - {fileID: 21300000, guid: 9f53f06b0aeb27f4ca33aa1027af5b68, type: 3}
-  weapons3: []
-  weapons4: []
-  weapons5: []
+  weapons3:
+  - {fileID: 21300000, guid: bbe32551ae0f09a4ca6e9a04f137fb8c, type: 3}
+  - {fileID: 21300000, guid: de26078cbdf050c43af73a498b52e58f, type: 3}
+  - {fileID: 21300000, guid: de24e780986ec1e489f6b81e7e8b9cff, type: 3}
+  - {fileID: 21300000, guid: 587b23dd71b93034c8394203a377ed91, type: 3}
+  - {fileID: 21300000, guid: 7c38a90bd322c1c44976b403dff289d8, type: 3}
+  - {fileID: 21300000, guid: bc72355d2ba3d5942bf03c5163837167, type: 3}
+  - {fileID: 21300000, guid: 311d27c92a52e9943b67e6588d90ac9f, type: 3}
+  - {fileID: 21300000, guid: 4be5f159e8f3a4244bc2a8ffbad5790e, type: 3}
+  - {fileID: 21300000, guid: 1be405fbafc2c0f47b1d2a0adb3523b9, type: 3}
+  weapons4:
+  - {fileID: 21300000, guid: 2a0267830fe27e142aba913ec40c914d, type: 3}
+  - {fileID: 21300000, guid: b89d45ed5bc500a4aa17daca4742d8f2, type: 3}
+  - {fileID: 21300000, guid: bc8992e85c791be439a2210f056e9932, type: 3}
+  - {fileID: 21300000, guid: be59e7d54493a6747b0662efb3003e13, type: 3}
+  - {fileID: 21300000, guid: bb5e2f1d7b45b064ab3f9dc655374da2, type: 3}
+  - {fileID: 21300000, guid: 1a1eef9de4fe3364bbba18e334a16a0a, type: 3}
+  - {fileID: 21300000, guid: 6bc11a4997131f14a9eeb7201f285369, type: 3}
+  - {fileID: 21300000, guid: f2dc3492ab78e024584bf290582762c6, type: 3}
+  - {fileID: 21300000, guid: 0a39d10bbce73f242841b89d0b9e6465, type: 3}
+  weapons5:
+  - {fileID: 21300000, guid: 40f42d7c27653af4ea94ed82f6b89dff, type: 3}
 --- !u!1 &1380318738
 GameObject:
   m_ObjectHideFlags: 0

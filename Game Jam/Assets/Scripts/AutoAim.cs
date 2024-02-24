@@ -7,29 +7,29 @@ public class AutoAim : MonoBehaviour
     public float range;
     public float attackSpeed;
     public Collider[] hitColliders;
-    public Collider clostestTarget;
-    float clostestTargetDistance;
+    public Collider closestTarget;
+    float closestTargetDistance;
     // Start is called before the first frame update
     void Start()
     {
-        clostestTargetDistance = range;
+        closestTargetDistance = range;
     }
 
     // Update is called once per frame
     void Update()
     {
-        clostestTargetDistance = range;
-        clostestTarget = null;
+        closestTargetDistance = range;
+        closestTarget = null;
         hitColliders = Physics.OverlapSphere(transform.position, range);
         if (hitColliders.Length > 0)
         {
             for (int i = 0; i < hitColliders.Length; i++)
             {
                 float targetDistance = (transform.position - hitColliders[i].transform.position).magnitude;
-                if (targetDistance < clostestTargetDistance && hitColliders[i].gameObject.tag == "Enemy")
+                if (targetDistance < closestTargetDistance && hitColliders[i].gameObject.tag == "Enemy")
                 {
-                    clostestTarget = hitColliders[i];
-                    clostestTargetDistance = (transform.position - clostestTarget.transform.position).magnitude;
+                    closestTarget = hitColliders[i];
+                    closestTargetDistance = (transform.position - closestTarget.transform.position).magnitude;
                 }
             }
 
@@ -38,10 +38,10 @@ public class AutoAim : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (clostestTarget != null)
+        if (closestTarget != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, clostestTarget.transform.position);
+            Gizmos.DrawLine(transform.position, closestTarget.transform.position);
         }
     }
 }

@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 433314432}
   - component: {fileID: 433314431}
   - component: {fileID: 433314430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ Transform:
   m_GameObject: {fileID: 433314429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: -8.86, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2047,10 +2047,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - {fileID: 7335797920565512899, guid: 719c91bab9d4961419d8e0081865a37b, type: 3}
-  spawnRadius: 10
-  spawnTimer: 0
-  spawnRate: 0.05
-  spawnTime: 2
+  spawnRadius: 15
+  spawnTimer: 1
+  spawnIncreaseRate: 0.0005
 --- !u!1 &1841024842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2252,7 @@ GameObject:
   - component: {fileID: 2108025234}
   - component: {fileID: 2108025233}
   - component: {fileID: 2108025240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

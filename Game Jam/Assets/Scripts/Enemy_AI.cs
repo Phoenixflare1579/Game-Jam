@@ -26,5 +26,15 @@ public class Enemy_AI : MonoBehaviour
         direction = target.transform.position - rb.transform.position;
 
         rb.velocity = direction.normalized * speed;
+
+        if (Physics.CheckSphere(transform.position, 2))
+        {
+            Attack(target);
+        }
+    }
+
+    void Attack(GameObject target)
+    {
+        Debug.Log("hit target");
     }
 }

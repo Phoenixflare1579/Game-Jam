@@ -65,7 +65,6 @@ public class Enemy_AI : MonoBehaviour
     void Attack(GameObject target)
     {
         PlayerStats targetStats = target.GetComponent<PlayerStats>();
-        Debug.Log("hit target");
         targetStats.HP -= attackDamage;
     }
 }

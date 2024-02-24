@@ -50,6 +50,11 @@ public class StatLevelUpMenu : MonoBehaviour
         player.GetComponent<PlayerStats>().Attack += 1;
         UpdateUI();
     }
+    public void LevelDefense()
+    {
+        player.GetComponent<PlayerStats>().Def += 1;
+        UpdateUI();
+    }
     public void LevelSpeed()
     { 
         player.GetComponent<PlayerStats>().Speed += 1;

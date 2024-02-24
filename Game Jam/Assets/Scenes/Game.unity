@@ -604,7 +604,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -668,7 +668,7 @@ Transform:
   m_GameObject: {fileID: 433314429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.86, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2049,7 +2049,7 @@ MonoBehaviour:
   - {fileID: 7335797920565512899, guid: 719c91bab9d4961419d8e0081865a37b, type: 3}
   spawnRadius: 15
   spawnTimer: 1
-  spawnIncreaseRate: 0.0005
+  spawnIncreaseRate: 0.005
 --- !u!1 &1841024842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,7 +2399,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &2108025236
 SphereCollider:
@@ -2481,7 +2481,7 @@ Transform:
   m_GameObject: {fileID: 2108025232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.691798, y: 1, z: 8.634915}
+  m_LocalPosition: {x: -7.691798, y: 0, z: 8.634915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

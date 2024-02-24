@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     // put differnt enemies in this array and later set it up to choose enemy based on game progression
-    public GameObject[] spawnables;
-    public float spawnRadius;
+    [SerializeField] private GameObject[] spawnables;
+    [SerializeField] private float spawnRadius;
     // enemies per second
-    public float spawnTimer;
-    public float spawnIncreaseRate;
+    [SerializeField] private float spawnTimer;
+    [SerializeField] private float spawnIncreaseRate;
 
     private IEnumerator coroutine;
 

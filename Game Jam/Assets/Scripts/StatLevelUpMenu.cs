@@ -37,7 +37,6 @@ public class StatLevelUpMenu : MonoBehaviour
         //speedText.text = "Speed: " + playerStats.Speed.ToString();
         //defText.text = "Defense: " + playerStats.Def.ToString();
         //attackSpeedText.text = "Attack Speed: " + playerStats.Attack.ToString();
-       // dodgeText.text = " Dodge: " + playerStats.Dodge.ToString();
     }
 
     public void LevelMaxHp()
@@ -60,14 +59,9 @@ public class StatLevelUpMenu : MonoBehaviour
         player.GetComponent<PlayerStats>().Speed += 1;
         UpdateUI();
     }
-    public void levelAttackSpeed()
+    public void LevelAttackSpeed()
     {
         player.GetComponent<PlayerStats>().AttackSpeed += 1;
-        UpdateUI();
-    }
-    public void LevelDodge() 
-    { 
-        player.GetComponent<PlayerStats>().Dodge += 1;
         UpdateUI();
     }
 }

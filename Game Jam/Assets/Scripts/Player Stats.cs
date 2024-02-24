@@ -10,13 +10,13 @@ public class PlayerStats : MonoBehaviour
     public int MaxEXP;
     public int EXP;
     public int Level;
-    public float Dodge;
     public float Speed;
     public int Attack;
     public float AttackSpeed;
     public int Def;
     public int Weapon;
     public int Upgrade;
+    public int prevWeapon;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,6 @@ public class PlayerStats : MonoBehaviour
         HP = MaxHP;
         MaxEXP = 100;
         EXP = 0;
-        Dodge = 0.01f;
         Speed = 5f;
         Attack = 5;
         AttackSpeed = 0.25f;
@@ -32,6 +31,7 @@ public class PlayerStats : MonoBehaviour
         Weapon = 1;
         Upgrade = 0;
         Level = 1;
+        prevWeapon = 0;
     }
 
     // Update is called once per frame

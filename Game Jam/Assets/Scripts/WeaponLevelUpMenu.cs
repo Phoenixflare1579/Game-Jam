@@ -9,7 +9,6 @@ public class WeaponLevelUp : MonoBehaviour
 {
     GameObject player;
     GameObject panel;
-    int prevWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +37,8 @@ public class WeaponLevelUp : MonoBehaviour
 
     public void RevertWeapon()
     {
-        int temp = prevWeapon; //store previous weapon into temp
-        prevWeapon = player.GetComponent<PlayerStats>().Weapon; //store current weapon as new prev weapon
+        int temp = player.GetComponent<PlayerStats>().prevWeapon; //store previous weapon into temp
+        player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon; //store current weapon as new prev weapon
         player.GetComponent<PlayerStats>().Weapon = temp; //new weapon is previous weapon
     }
 

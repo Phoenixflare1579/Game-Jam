@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8189599120859968086}
   - component: {fileID: 8888687455543114898}
   - component: {fileID: 725644366689674958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Clownfish
   m_TagString: Enemy
   m_Icon: {fileID: 0}

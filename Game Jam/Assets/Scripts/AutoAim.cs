@@ -12,6 +12,7 @@ public class AutoAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.localPosition = new Vector3(0,0,0);
         closestTargetDistance = range;
     }
 
@@ -40,7 +41,7 @@ public class AutoAim : MonoBehaviour
     {
         if (closestTarget != null)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, closestTarget.transform.position);
         }
     }

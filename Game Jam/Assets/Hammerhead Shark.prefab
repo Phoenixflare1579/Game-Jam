@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9082509700395837159}
   - component: {fileID: 5019035992853753108}
   - component: {fileID: -30614606262639626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hammerhead Shark
   m_TagString: Enemy
   m_Icon: {fileID: 0}

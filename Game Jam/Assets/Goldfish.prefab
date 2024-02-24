@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 128691894270829462}
   - component: {fileID: 1518923366869521826}
   - component: {fileID: -7744638987646896163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goldfish
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   attackSpeed: 1
-  spearSize: 2
+  spearSize: 0.5
   hitColliders: []
   bestTarget: {fileID: 0}
   bestTargetDirection: {x: 0, y: 0, z: 0}

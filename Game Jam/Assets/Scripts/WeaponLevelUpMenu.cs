@@ -36,7 +36,7 @@ public class WeaponLevelUp : MonoBehaviour
     public void ChangeWeapon()
     {
         player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon;
-        int rand = Random.Range(1, weaponHolder.transform.childCount);
+        int rand = Random.Range(1, weaponHolder.transform.childCount + 1);
         player.GetComponent<PlayerStats>().Weapon = rand;
         player.GetComponent<PlayerStats>().Upgrade = 0;
         player.GetComponent<PlayerStats>().changeWeapon = true;

@@ -12,6 +12,10 @@ public class SpearAim : MonoBehaviour
     [SerializeField] private Vector3 bestTargetDirection;
     [SerializeField] private float bestTargetAmount;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float projectileSpeed = 5;
+    [SerializeField] private int projectileDamage = 20;
+    [SerializeField] private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,12 @@ public class SpearAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > attackSpeed)
+        {
+            timer = attackSpeed;
+        }
+
         bestTargetAmount = 0;
         bestTarget = null;
 
@@ -36,13 +46,19 @@ public class SpearAim : MonoBehaviour
             {
                 Collider target = hitColliders[i];
                 Vector3 targetDirection = hitColliders[i].transform.position - transform.position;
-                RaycastHit[] harpoonHitColliders = Physics.SphereCastAll(transform.position, spearSize / 2, targetDirection, range);
+                RaycastHit[] SpearHitColliders = Physics.SphereCastAll(transform.position, spearSize / 2, targetDirection, range);
 
-                if (harpoonHitColliders.Length > bestTargetAmount && hitColliders[i].gameObject.tag == "Enemy")
+                if (SpearHitColliders.Length > bestTargetAmount && hitColliders[i].gameObject.tag == "Enemy")
                 {
                     bestTarget = hitColliders[i];
-                    bestTargetAmount = harpoonHitColliders.Length;
+                    bestTargetAmount = SpearHitColliders.Length;
                     bestTargetDirection = -targetDirection;
+
+                    if (timer >= attackSpeed)
+                    {
+                        Instantiate(projectile, transform.position, Quaternion.identity);
+                        timer = 0;
+                    }
                 }
             }
 
@@ -60,6 +76,31 @@ public class SpearAim : MonoBehaviour
         }
 
         transform.rotation = Quaternion.LookRotation(bestTargetDirection);
+    }
+
+    public Vector3 getBestTargetDirection()
+    {
+        return bestTargetDirection;
+    }
+
+    public float getProjectileSpeed()
+    {
+        return projectileSpeed;
+    }
+
+    public int getAttackDamage()
+    {
+        return projectileDamage;
+    }
+
+    public float getSpearSize()
+    {
+        return spearSize;
+    }
+
+    public float getRange()
+    {
+        return range;
     }
 
     void OnDrawGizmos()

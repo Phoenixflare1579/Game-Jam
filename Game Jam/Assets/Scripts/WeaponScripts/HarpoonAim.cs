@@ -99,6 +99,11 @@ public class HarpoonAim : MonoBehaviour
         return harpoonSize;
     }
 
+    public float getRange()
+    {
+        return range;
+    }
+
     void OnDrawGizmos()
     {
         if (bestTarget != null)

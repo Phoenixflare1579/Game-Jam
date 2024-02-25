@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject weaponHolder;
     public int MaxHP;
     public int HP;
     public int MaxEXP;
@@ -26,6 +28,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        weaponHolder = player.transform.GetChild(0).gameObject;
         MaxHP = 100;
         HP = MaxHP;
         MaxEXP = 100;
@@ -48,7 +52,7 @@ public class PlayerStats : MonoBehaviour
         this.GetComponent<Player_MovewInput>().speed = Speed;
         if (changeWeapon)
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i <= weaponHolder.transform.childCount; i++)
             {
                 if (i == Weapon)
                 {

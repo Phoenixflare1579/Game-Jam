@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class WeaponLevelUp : MonoBehaviour
 {
-    GameObject player;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject weaponHolder;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        weaponHolder = player.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class WeaponLevelUp : MonoBehaviour
     public void ChangeWeapon()
     {
         player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon;
-        int rand = Random.Range(1, 6);
+        int rand = Random.Range(1, weaponHolder.transform.childCount);
         player.GetComponent<PlayerStats>().Weapon = rand;
         player.GetComponent<PlayerStats>().Upgrade = 0;
         player.GetComponent<PlayerStats>().changeWeapon = true;

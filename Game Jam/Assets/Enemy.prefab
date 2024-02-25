@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4538069717287811445}
   - component: {fileID: 2815590095080127125}
   - component: {fileID: 3025780471812926024}
+  - component: {fileID: -722806891422338292}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -149,13 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 2
-  dectectionRange: 0
-  direction: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
   attackCooldown: 1
   attackRange: 1.4142135
   attackDamage: 5
+  speed: 2
+  dectectionRange: 0
+  target: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+  hitColliders: []
 --- !u!95 &3025780471812926024
 Animator:
   serializedVersion: 5
@@ -177,3 +179,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-722806891422338292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335797920565512899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6208b745a4e06408d72c2e4f5eeeda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0
+  attackRange: 0
+  attackDamage: 0
+  speed: 0
+  HP: 0

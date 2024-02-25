@@ -7,10 +7,10 @@ public class Enemy_AI : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     //private BoxCollider Ecollider;
 
-    [SerializeField] private float attackCooldown = 1;
-    [SerializeField] private float attackRange = 5;
-    [SerializeField] private int attackDamage = 5;
-    [SerializeField] private float speed = 2;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float attackRange;
+    [SerializeField] private int attackDamage;
+    [SerializeField] private float speed;
     [SerializeField] private float dectectionRange;
     [SerializeField] private GameObject target;
     [SerializeField] private Vector3 direction;
@@ -26,7 +26,6 @@ public class Enemy_AI : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         direction = target.transform.position - rb.transform.position;
         distance = direction.magnitude;
-
         coroutine = AttackWait();
         StartCoroutine(coroutine);
     }
@@ -34,6 +33,10 @@ public class Enemy_AI : MonoBehaviour
 
     void Update()
     {
+        speed = GetComponent<EnemyStats>().speed;
+        attackCooldown = GetComponent<EnemyStats>().attackCooldown;
+        attackDamage = GetComponent<EnemyStats>().attackDamage;
+        attackRange = GetComponent<EnemyStats>().attackRange;
         direction = target.transform.position - rb.transform.position;
         distance = direction.magnitude;
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3570086197589890724}
   - component: {fileID: 78910366399273306}
   - component: {fileID: -8272571362107162209}
+  - component: {fileID: 222646061093707690}
   m_Layer: 6
   m_Name: Jellyfish
   m_TagString: Enemy
@@ -101,13 +102,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 2
-  dectectionRange: 0
-  direction: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
   attackCooldown: 1
   attackRange: 1
   attackDamage: 5
+  speed: 2
+  dectectionRange: 0
+  target: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+  hitColliders: []
 --- !u!54 &3570086197589890724
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,3 +179,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.22, y: 0.78, z: 0.20000005}
   m_Center: {x: 0.06, y: 0.38, z: 0}
+--- !u!114 &222646061093707690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755642656684417605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909f8bbd91b9da64cabd77874a0e4211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0
+  attackRange: 0
+  attackDamage: 0
+  speed: 0
+  HP: 0

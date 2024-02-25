@@ -79,7 +79,7 @@ public class Enemy_AI : MonoBehaviour
         if (target != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, attackRange);
+            Gizmos.DrawWireSphere(transform.position, attackRange);
         }
     }
 }

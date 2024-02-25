@@ -7,6 +7,7 @@ public class Enemy_AI : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     //private BoxCollider Ecollider;
 
+    [SerializeField] private int HP;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackRange;
     [SerializeField] private int attackDamage;
@@ -33,10 +34,6 @@ public class Enemy_AI : MonoBehaviour
 
     void Update()
     {
-        speed = GetComponent<EnemyStats>().speed;
-        attackCooldown = GetComponent<EnemyStats>().attackCooldown;
-        attackDamage = GetComponent<EnemyStats>().attackDamage;
-        attackRange = GetComponent<EnemyStats>().attackRange;
         direction = target.transform.position - rb.transform.position;
         distance = direction.magnitude;
 
@@ -75,6 +72,20 @@ public class Enemy_AI : MonoBehaviour
     {
         PlayerStats targetStats = target.GetComponent<PlayerStats>();
         targetStats.HP -= attackDamage;
+    }
+
+    public int getHP()
+    {
+        return HP;
+    }
+
+    public void setHP(int _HP)
+    {
+        HP = _HP;
+        if (HP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnDrawGizmos()

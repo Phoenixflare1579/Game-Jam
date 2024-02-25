@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 128691894270829462}
   - component: {fileID: 1518923366869521826}
   - component: {fileID: -7744638987646896163}
-  - component: {fileID: -5219236812165786113}
   m_Layer: 6
   m_Name: Goldfish
   m_TagString: Enemy
@@ -150,10 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  attackCooldown: 1
-  attackRange: 1
-  attackDamage: 5
-  speed: 2
+  HP: 10
+  attackCooldown: 0.5
+  attackRange: 2
+  attackDamage: 3
+  speed: 4
   dectectionRange: 0
   target: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
@@ -179,20 +179,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5935974, y: 1.2499998, z: 0.1}
   m_Center: {x: -0.15007019, y: -0.25, z: -8.4703295e-22}
---- !u!114 &-5219236812165786113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98523792450405201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0329fb1d2cfba6148b3ea4eabce8158a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 0
-  attackRange: 0
-  attackDamage: 0
-  speed: 0
-  HP: 0

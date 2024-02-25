@@ -6,7 +6,7 @@ public class AnchorAim : MonoBehaviour
 {
     [SerializeField] private float range = 10;
     [SerializeField] private float attackSpeed = 1;
-    [SerializeField] private float spearSize = 2;
+    [SerializeField] private float anchorSize = 2;
     [SerializeField] private Collider[] hitColliders;
     [SerializeField] private Collider bestTarget;
     [SerializeField] private Vector3 bestTargetDirection;
@@ -14,6 +14,10 @@ public class AnchorAim : MonoBehaviour
     [SerializeField] private bool attackSide; //0 for left, 1 for right
     [SerializeField] private List<Collider> attackColliders;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float projectileSpeed = 5;
+    [SerializeField] private int projectileDamage = 20;
+    [SerializeField] private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,12 @@ public class AnchorAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > attackSpeed)
+        {
+            timer = attackSpeed;
+        }
+
         bestTargetDistance = range;
         bestTarget = null; 
         attackColliders = new List<Collider>();
@@ -43,7 +53,14 @@ public class AnchorAim : MonoBehaviour
                     bestTarget = hitColliders[i];
                     bestTargetDirection = transform.position - hitColliders[i].transform.position;
                     bestTargetDistance = (transform.position - bestTarget.transform.position).magnitude;
+
+                    if (timer >= attackSpeed)
+                    {
+                        Instantiate(projectile, transform.position, Quaternion.identity);
+                        timer = 0;
+                    }
                 }
+
             }
 
             if (bestTargetDirection.x < 0)
@@ -80,6 +97,31 @@ public class AnchorAim : MonoBehaviour
         }
 
         transform.rotation = Quaternion.LookRotation(bestTargetDirection);
+    }
+
+    public Vector3 getBestTargetDirection()
+    {
+        return bestTargetDirection;
+    }
+
+    public float getProjectileSpeed()
+    {
+        return projectileSpeed;
+    }
+
+    public int getAttackDamage()
+    {
+        return projectileDamage;
+    }
+
+    public float getAnchorSize()
+    {
+        return anchorSize;
+    }
+
+    public float getRange()
+    {
+        return range;
     }
 
     void OnDrawGizmos()

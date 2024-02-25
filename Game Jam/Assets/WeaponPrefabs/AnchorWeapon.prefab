@@ -47,12 +47,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   attackSpeed: 1
-  spearSize: 2
+  anchorSize: 2
   hitColliders: []
   bestTarget: {fileID: 0}
   bestTargetDirection: {x: 0, y: 0, z: 0}
   bestTargetDistance: 0
+  attackSide: 0
+  attackColliders: []
   weapon: {fileID: 0}
+  projectile: {fileID: 1100187498322932468, guid: 4bd876eebcdaad04a9bd22c3b4a13445, type: 3}
+  projectileSpeed: 5
+  projectileDamage: 20
+  timer: 0
 --- !u!1 &8683123761887213547
 GameObject:
   m_ObjectHideFlags: 0

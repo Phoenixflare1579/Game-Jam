@@ -137,7 +137,7 @@ MonoBehaviour:
   bestTargetDirection: {x: 0, y: 0, z: 0}
   bestTargetAmount: 0
   weapon: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 243627962081868764, guid: 29fbbcb2191ee3a4d85927dd30ede05a, type: 3}
   projectileSpeed: 10
   projectileDamage: 20
   timer: 0

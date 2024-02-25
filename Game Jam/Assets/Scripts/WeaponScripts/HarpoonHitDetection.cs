@@ -17,7 +17,14 @@ public class HarpoonHitDetection : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         weaponHolder = player.transform.GetChild(0).gameObject;
-        weapon = weaponHolder.transform.GetChild(0).gameObject;
+        //weapon = weaponHolder.transform.GetChild(0).gameObject;
+        for (int i = 0; i < weaponHolder.transform.childCount; i++)
+        {
+            if (weaponHolder.transform.GetChild(i).gameObject.name == "HarpoonGunWeapon")
+            {
+                weapon = weaponHolder.transform.GetChild(i).gameObject;
+            }
+        }
 
         Vector3 launchDirection = weapon.GetComponent<HarpoonAim>().getBestTargetDirection();
         speed = weapon.GetComponent<HarpoonAim>().getProjectileSpeed();
@@ -57,14 +64,4 @@ public class HarpoonHitDetection : MonoBehaviour
             }
         }
     }
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.collider.tag == "Enemy")
-    //    {
-    //        Enemy_AI enemy = collision.collider.gameObject.GetComponent<Enemy_AI>();
-    //        enemy.setHP(enemy.getHP() - weapon.GetComponent<HarpoonAim>().getAttackDamage());
-    //        Destroy(gameObject);
-    //    }
-    //}
 }

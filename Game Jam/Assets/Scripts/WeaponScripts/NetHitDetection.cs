@@ -17,7 +17,14 @@ public class NetHitDetection : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         weaponHolder = player.transform.GetChild(0).gameObject;
-        weapon = weaponHolder.transform.GetChild(0).gameObject;
+        //weapon = weaponHolder.transform.GetChild(0).gameObject;
+        for (int i = 0; i < weaponHolder.transform.childCount; i++)
+        {
+            if (weaponHolder.transform.GetChild(i).gameObject.name == "FishingNetWeapon")
+            {
+                weapon = weaponHolder.transform.GetChild(i).gameObject;
+            }
+        }
 
         Vector3 launchDirection = weapon.GetComponent<FishingNetAim>().getBestTargetDirection();
         targetPosition = weapon.GetComponent<FishingNetAim>().getBestTargetPosition();

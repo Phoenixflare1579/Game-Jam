@@ -43,17 +43,17 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         this.GetComponent<Player_MovewInput>().speed = Speed;
-        if (changeWeapon) 
+        if (changeWeapon)
         {
             for (int i = 1; i < 6; i++)
             {
                 if (i == Weapon)
                 {
-                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(true);
+                    this.transform.GetChild(0).GetChild(i - 1).gameObject.SetActive(true);
                 }
                 else
                 {
-                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(false);
+                    this.transform.GetChild(0).GetChild(i - 1).gameObject.SetActive(false);
                 }
             }
             changeWeapon = false;

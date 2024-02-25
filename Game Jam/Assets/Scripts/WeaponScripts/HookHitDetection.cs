@@ -15,7 +15,14 @@ public class HookHitDetection : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         weaponHolder = player.transform.GetChild(0).gameObject;
-        weapon = weaponHolder.transform.GetChild(0).gameObject;
+        //weapon = weaponHolder.transform.GetChild(0).gameObject;
+        for (int i = 0; i < weaponHolder.transform.childCount; i++)
+        {
+            if (weaponHolder.transform.GetChild(i).gameObject.name == "FishingRodWeapon")
+            {
+                weapon = weaponHolder.transform.GetChild(i).gameObject;
+            }
+        }
 
         Vector3 launchDirection = weapon.GetComponent<RodAim>().getBestTargetDirection();
         speed = weapon.GetComponent<RodAim>().getProjectileSpeed();

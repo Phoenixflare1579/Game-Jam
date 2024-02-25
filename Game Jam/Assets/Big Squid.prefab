@@ -152,8 +152,8 @@ MonoBehaviour:
   HP: 150
   EXP: 250
   attackCooldown: 1
-  attackRange: 2
-  attackDamage: 10
+  attackRange: 3
+  attackDamage: 20
   speed: 3
   dectectionRange: 0
   target: {fileID: 0}

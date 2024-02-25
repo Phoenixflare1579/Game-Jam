@@ -103,9 +103,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   HP: 5
   EXP: 5
-  attackCooldown: 2
+  attackCooldown: 0.5
   attackRange: 2
-  attackDamage: 2
+  attackDamage: 4
   speed: 5
   dectectionRange: 0
   target: {fileID: 0}

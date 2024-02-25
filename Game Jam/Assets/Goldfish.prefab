@@ -153,7 +153,7 @@ MonoBehaviour:
   EXP: 10
   attackCooldown: 0.5
   attackRange: 2
-  attackDamage: 3
+  attackDamage: 5
   speed: 4
   dectectionRange: 0
   target: {fileID: 0}

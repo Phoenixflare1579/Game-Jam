@@ -128,11 +128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  HP: 15
+  HP: 25
   EXP: 40
   attackCooldown: 1
   attackRange: 4
-  attackDamage: 7
+  attackDamage: 15
   speed: 3
   dectectionRange: 0
   target: {fileID: 0}

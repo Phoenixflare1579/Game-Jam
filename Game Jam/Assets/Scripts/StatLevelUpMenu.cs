@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class StatLevelUpMenu : MonoBehaviour
 {
     GameObject player;
-    GameObject panel;
 
     // Start is called before the first frame update
     void Start()

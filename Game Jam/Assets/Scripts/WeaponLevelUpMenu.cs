@@ -23,21 +23,31 @@ public class WeaponLevelUp : MonoBehaviour
 
     public void UpgradeWeapon()
     {
-
-       
+        if (player.GetComponent<PlayerStats>().Weapon != 5)
+        {
+            int rand = Random.Range(1, 9);
+            player.GetComponent<PlayerStats>().Upgrade = rand;
+        }
+        Time.timeScale = 1;
     }
 
     public void ChangeWeapon()
     {
-
-
+        int rand = Random.Range(0, 6);
+        player.GetComponent<PlayerStats>().Weapon = rand;
+        player.GetComponent<PlayerStats>().Upgrade = 0;
+        Time.timeScale = 1;
     }
 
     public void RevertWeapon()
     {
-        int temp = player.GetComponent<PlayerStats>().prevWeapon; //store previous weapon into temp
-        player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon; //store current weapon as new prev weapon
-        player.GetComponent<PlayerStats>().Weapon = temp; //new weapon is previous weapon
+        if (player.GetComponent<PlayerStats>().Weapon != 0)
+        {
+            int temp = player.GetComponent<PlayerStats>().prevWeapon; //store previous weapon into temp
+            player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon; //store current weapon as new prev weapon
+            player.GetComponent<PlayerStats>().Weapon = temp; //new weapon is previous weapon
+            
+        }
         Time.timeScale = 1;
     }
 

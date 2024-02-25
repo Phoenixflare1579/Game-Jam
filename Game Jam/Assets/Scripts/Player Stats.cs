@@ -23,6 +23,9 @@ public class PlayerStats : MonoBehaviour
     public GameObject StatsLevelUp;
     public GameObject WeaponLevelUp;
     int bonus;
+
+    private Queue<GameObject> levelUpPanels = new Queue<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,16 +91,22 @@ public class PlayerStats : MonoBehaviour
             Level++;
             if (Level % 2 == 0) //if level is even
             {
-                WeaponLevelUp.SetActive(true);
+                levelUpPanels.Enqueue(WeaponLevelUp);
 
             }
             else //level is odd 
             {
-                StatsLevelUp.SetActive(true);
+                levelUpPanels.Enqueue(StatsLevelUp);
 
             }
 
             MaxEXP += 100; //This is a test value we don't need to keep this number increase
+            if (levelUpPanels.Count > 0)
+            {
+                GameObject nextPanel = levelUpPanels.Dequeue();
+                nextPanel.SetActive(true);
+            }
+
         }
         
         if (HP <= 0)

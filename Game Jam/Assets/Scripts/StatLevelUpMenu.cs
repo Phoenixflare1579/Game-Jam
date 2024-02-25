@@ -14,8 +14,6 @@ public class StatLevelUpMenu : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        panel = GameObject.FindGameObjectWithTag("StatLevelUpPanel");
-        panel.SetActive(true);
     }
 
     // Update is called once per frame

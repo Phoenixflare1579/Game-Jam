@@ -15,7 +15,6 @@ public class WeaponLevelUp : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         panel = GameObject.FindGameObjectWithTag("WeaponLevelUpPanel");
-        panel.SetActive(true);
     }
 
     // Update is called once per frame

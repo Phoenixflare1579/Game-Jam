@@ -24,4 +24,8 @@ public class PlayGame : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

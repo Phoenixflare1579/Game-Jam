@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RodAim : MonoBehaviour
 {
-    [SerializeField] private float range;
-    [SerializeField] private float attackSpeed;
+    [SerializeField] private float range = 10;
+    [SerializeField] private float attackSpeed = 1;
     [SerializeField] private Collider[] hitColliders;
     [SerializeField] private Collider closestTarget;
     [SerializeField] private Vector3 closestTargetDirection;
@@ -60,10 +60,10 @@ public class RodAim : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
         if (closestTarget != null)
         {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, range);
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, closestTarget.transform.position);
         }

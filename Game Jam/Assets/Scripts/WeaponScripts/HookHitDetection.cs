@@ -9,6 +9,7 @@ public class HookHitDetection : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject weaponHolder;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private float speed;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class HookHitDetection : MonoBehaviour
         weapon = weaponHolder.transform.GetChild(0).gameObject;
 
         Vector3 launchDirection = weapon.GetComponent<RodAim>().getBestTargetDirection();
-        float speed = weapon.GetComponent<RodAim>().getProjectileSpeed();
+        speed = weapon.GetComponent<RodAim>().getProjectileSpeed();
 
         collider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();

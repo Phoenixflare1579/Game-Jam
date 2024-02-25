@@ -19,8 +19,10 @@ public class PlayerStats : MonoBehaviour
     public int Upgrade;
     public int prevWeapon;
     public bool changeWeapon;
+    public bool upgradeWeapon;
     public GameObject StatsLevelUp;
     public GameObject WeaponLevelUp;
+    int bonus;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerStats : MonoBehaviour
         Level = 1;
         prevWeapon = 0;
         changeWeapon = true;
+        bonus = 0;
     }
 
     // Update is called once per frame
@@ -57,6 +60,25 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             changeWeapon = false;
+        }
+        if (upgradeWeapon)
+        {
+            if (Upgrade > 0 && Upgrade <=4)
+            {
+                bonus += 3;
+                Attack += 3;
+            }
+            else if (Upgrade > 0 && Upgrade <= 8)
+            {
+                Attack += 5;
+                bonus += 5;
+            }
+            else
+            {
+                Attack -= bonus;
+                bonus = 0;
+            }
+            upgradeWeapon = false;
         }
         if (EXP >= MaxEXP) 
         {

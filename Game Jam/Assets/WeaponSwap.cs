@@ -27,7 +27,6 @@ public class WeaponSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerStats);
         playerWeapon = playerStats.Weapon;
         currentWeapon = getWeaponID();
 

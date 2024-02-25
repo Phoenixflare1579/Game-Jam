@@ -35,7 +35,11 @@ public class RodAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime; 
+        timer += Time.deltaTime;
+        if (timer > attackSpeed)
+        {
+            timer = attackSpeed;
+        }
 
         bestTargetDistance = range;
         bestTarget = null;
@@ -51,7 +55,7 @@ public class RodAim : MonoBehaviour
                     bestTargetDirection = transform.position - hitColliders[i].transform.position;
                     bestTargetDistance = (transform.position - bestTarget.transform.position).magnitude;
 
-                    if (timer > attackSpeed)
+                    if (timer >= attackSpeed)
                     {
                         Instantiate(projectile, transform.position, Quaternion.identity);
                         timer = 0;

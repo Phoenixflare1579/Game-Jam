@@ -12,6 +12,10 @@ public class FishingNetAim : MonoBehaviour
     [SerializeField] private Vector3 bestTargetDirection;
     [SerializeField] private float bestTargetAmount;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float projectileSpeed = 2;
+    [SerializeField] private int projectileDamage = 2;
+    [SerializeField] private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,12 @@ public class FishingNetAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > attackSpeed)
+        {
+            timer = attackSpeed;
+        }
+
         bestTargetAmount = 0;
         bestTarget = null;
 
@@ -43,6 +53,12 @@ public class FishingNetAim : MonoBehaviour
                     bestTarget = hitColliders[i];
                     bestTargetAmount = netHitColliders.Length;
                     bestTargetDirection = transform.position - hitColliders[i].transform.position;
+                }
+
+                if (timer >= attackSpeed)
+                {
+                    Instantiate(projectile, transform.position, Quaternion.identity);
+                    timer = 0;
                 }
             }
 
@@ -62,12 +78,37 @@ public class FishingNetAim : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(bestTargetDirection);
     }
 
+    public Vector3 getBestTargetDirection()
+    {
+        return bestTargetDirection;
+    }
+
+    public Vector3 getBestTargetPosition()
+    {
+        return bestTarget.transform.position;
+    }
+
+    public float getProjectileSpeed()
+    {
+        return projectileSpeed;
+    }
+
+    public int getAttackDamage()
+    {
+        return projectileDamage;
+    }
+
+    public float getNetSize()
+    {
+        return fishingNetSize;
+    }
+
     void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
         if (bestTarget != null)
         {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, range);
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(bestTarget.transform.position, fishingNetSize);
         }

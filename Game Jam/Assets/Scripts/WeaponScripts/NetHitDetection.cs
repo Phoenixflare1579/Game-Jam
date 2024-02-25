@@ -51,7 +51,7 @@ public class NetHitDetection : MonoBehaviour
         {
             if (collider.tag == "Enemy")
             {
-                Enemy_AI enemy = collider.GetComponent<Enemy_AI>();
+                Enemy_AI enemy = collider.gameObject.GetComponent<Enemy_AI>();
                 if (enemy != null)
                 {
                     enemy.setHP(enemy.getHP() - weapon.GetComponent<FishingNetAim>().getAttackDamage());

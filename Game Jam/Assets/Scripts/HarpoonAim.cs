@@ -36,14 +36,14 @@ public class HarpoonAim : MonoBehaviour
             for (int i = 0; i < hitColliders.Length; i++)
             {
                 Collider target = hitColliders[i];
-                Vector3 targetDirection = transform.position - hitColliders[i].transform.position;
-                RaycastHit[] harpoonHitColliders = Physics.SphereCastAll(transform.position, harpoonSize/2 , target.transform.position, harpoonShotDistance);
+                Vector3 targetDirection = hitColliders[i].transform.position - transform.position;
+                RaycastHit[] harpoonHitColliders = Physics.SphereCastAll(transform.position, harpoonSize / 2, targetDirection, harpoonShotDistance);
 
                 if (harpoonHitColliders.Length > bestTargetAmount && hitColliders[i].gameObject.tag == "Enemy")
                 {
                     bestTarget = hitColliders[i];
                     bestTargetAmount = harpoonHitColliders.Length;
-                    bestTargetDirection = transform.position - hitColliders[i].transform.position;
+                    bestTargetDirection = -targetDirection;
                 }
             }
 
@@ -71,7 +71,7 @@ public class HarpoonAim : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, range);
 
             Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, transform.position - bestTargetDirection);
+            Gizmos.DrawLine(transform.position, transform.position - harpoonShotDistance * bestTargetDirection.normalized);
 
             float angle = Vector3.SignedAngle(bestTargetDirection, new Vector3(1,0,0), Vector3.up) * Mathf.PI/180;
 

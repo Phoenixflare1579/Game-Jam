@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarpoonHitDetection : MonoBehaviour
+public class SpearHitDetection : MonoBehaviour
 {
     private Rigidbody rb;
     private BoxCollider collider;
@@ -12,6 +12,8 @@ public class HarpoonHitDetection : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float size;
     private HashSet<Collider> projectileHitSet;
+    private bool returnToPlayer = false;
+    private Vector3 launchPos;
 
     void Start()
     {
@@ -20,19 +22,20 @@ public class HarpoonHitDetection : MonoBehaviour
         //weapon = weaponHolder.transform.GetChild(0).gameObject;
         for (int i = 0; i < weaponHolder.transform.childCount; i++)
         {
-            if (weaponHolder.transform.GetChild(i).gameObject.name == "HarpoonGunWeapon")
+            if (weaponHolder.transform.GetChild(i).gameObject.name == "FishingSpearWeapon")
             {
                 weapon = weaponHolder.transform.GetChild(i).gameObject;
             }
         }
 
-        Vector3 launchDirection = weapon.GetComponent<HarpoonAim>().getBestTargetDirection();
-        speed = weapon.GetComponent<HarpoonAim>().getProjectileSpeed();
-        size = weapon.GetComponent<HarpoonAim>().getHarpoonSize();
+        launchPos = player.transform.position;
+        Vector3 launchDirection = weapon.GetComponent<SpearAim>().getBestTargetDirection();
+        speed = weapon.GetComponent<SpearAim>().getProjectileSpeed();
+        size = weapon.GetComponent<SpearAim>().getSpearSize();
 
         collider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.Euler(90, 0, Vector3.SignedAngle(launchDirection, Vector3.back, Vector3.up));
+        transform.rotation = Quaternion.Euler(90, 0, Vector3.SignedAngle(launchDirection, Vector3.back, Vector3.up) - 45);
         rb.velocity = -speed * launchDirection.normalized;
 
         projectileHitSet = new HashSet<Collider>();
@@ -41,9 +44,19 @@ public class HarpoonHitDetection : MonoBehaviour
 
     void Update()
     {
-        if ((transform.position - player.transform.position).magnitude > weapon.GetComponent<HarpoonAim>().getRange()) 
+        if ((transform.position - launchPos).magnitude > weapon.GetComponent<SpearAim>().getRange())
         {
-            Destroy(gameObject);
+            returnToPlayer = true;
+        }
+
+        if (returnToPlayer)
+        {
+            rb.velocity = speed* (player.transform.position - transform.position);
+
+            if ((transform.position - player.transform.position).magnitude < 1)
+            {
+                Destroy(gameObject);
+            }
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, size);
@@ -57,7 +70,7 @@ public class HarpoonHitDetection : MonoBehaviour
                     Enemy_AI enemy = collider.gameObject.GetComponent<Enemy_AI>();
                     if (enemy != null)
                     {
-                        enemy.setHP(enemy.getHP() - weapon.GetComponent<HarpoonAim>().getAttackDamage());
+                        enemy.setHP(enemy.getHP() - weapon.GetComponent<SpearAim>().getAttackDamage());
                     }
                     projectileHitSet.Add(collider);
                 }

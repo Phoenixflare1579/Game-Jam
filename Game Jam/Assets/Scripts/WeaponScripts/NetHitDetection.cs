@@ -30,14 +30,17 @@ public class NetHitDetection : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(90, 0, 0);
         transform.localScale = new Vector3(size, size, size);
-        rb.AddForce((targetPosition - transform.position).magnitude * new Vector3(0,1,0), ForceMode.Impulse);
+        rb.AddForce((targetPosition - transform.position).magnitude*0.8f * new Vector3(0,1,0), ForceMode.Impulse);
         rb.velocity = -speed * launchDirection.normalized;
     }
 
 
     void Update()
     {
-
+        if (transform.position.y < -1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)

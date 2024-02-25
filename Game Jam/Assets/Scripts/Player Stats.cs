@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     public int Weapon;
     public int Upgrade;
     public int prevWeapon;
+    public bool changeWeapon;
     public GameObject StatsLevelUp;
     public GameObject WeaponLevelUp;
     // Start is called before the first frame update
@@ -35,14 +36,28 @@ public class PlayerStats : MonoBehaviour
         Upgrade = 0;
         Level = 1;
         prevWeapon = 0;
-
-
+        changeWeapon = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         this.GetComponent<Player_MovewInput>().speed = Speed;
+        if (changeWeapon) 
+        {
+            for (int i = 1; i < 6; i++)
+            {
+                if (i == Weapon)
+                {
+                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(true);
+                }
+                else
+                {
+                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(false);
+                }
+            }
+            changeWeapon = false;
+        }
         if (EXP >= MaxEXP) 
         {
             Time.timeScale = 0;
@@ -62,6 +77,7 @@ public class PlayerStats : MonoBehaviour
 
             MaxEXP += 100; //This is a test value we don't need to keep this number increase
         }
+        
         if (HP <= 0)
         {
             SceneManager.LoadScene("Game Over");

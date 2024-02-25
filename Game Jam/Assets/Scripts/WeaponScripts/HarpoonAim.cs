@@ -54,15 +54,14 @@ public class HarpoonAim : MonoBehaviour
                     bestTarget = hitColliders[i];
                     bestTargetAmount = harpoonHitColliders.Length;
                     bestTargetDirection = -targetDirection;
+                }
 
-                    if (timer >= attackSpeed)
-                    {
-                        Instantiate(projectile, transform.position, Quaternion.identity);
-                        timer = 0;
-                    }
+                if (timer >= attackSpeed)
+                {
+                    Instantiate(projectile, transform.position, Quaternion.identity);
+                    timer = 0;
                 }
             }
-
 
 
             if (bestTargetDirection.x < 0)
@@ -98,11 +97,6 @@ public class HarpoonAim : MonoBehaviour
     public float getHarpoonSize()
     {
         return harpoonSize;
-    }
-
-    public float getRange()
-    {
-        return range;
     }
 
     void OnDrawGizmos()

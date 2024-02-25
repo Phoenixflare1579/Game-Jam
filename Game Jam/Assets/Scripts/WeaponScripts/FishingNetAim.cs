@@ -53,14 +53,13 @@ public class FishingNetAim : MonoBehaviour
                     bestTarget = hitColliders[i];
                     bestTargetAmount = netHitColliders.Length;
                     bestTargetDirection = transform.position - hitColliders[i].transform.position;
-
-                    if (timer >= attackSpeed)
-                    {
-                        Instantiate(projectile, transform.position, Quaternion.identity);
-                        timer = 0;
-                    }
                 }
 
+                if (timer >= attackSpeed)
+                {
+                    Instantiate(projectile, transform.position, Quaternion.identity);
+                    timer = 0;
+                }
             }
 
 

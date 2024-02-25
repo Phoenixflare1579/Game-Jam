@@ -41,7 +41,7 @@ public class HarpoonHitDetection : MonoBehaviour
 
     void Update()
     {
-        if ((transform.position - player.transform.position).magnitude > weapon.GetComponent<HarpoonAim>().getRange()) 
+        if ((transform.position - player.transform.position).magnitude > 40) 
         {
             Destroy(gameObject);
         }

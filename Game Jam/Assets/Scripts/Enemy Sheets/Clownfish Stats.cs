@@ -12,6 +12,7 @@ public class ClownfishStats : EnemyStats
         attackDamage = 7;
         attackCooldown = 1;
         speed = 2;
+        EXP = 15;
     }
 
 }

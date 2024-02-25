@@ -11,5 +11,6 @@ public class JellyfishStats : EnemyStats
         attackDamage = 2;
         attackCooldown = 1;
         speed = 5;
+        EXP = 10;
     }
 }

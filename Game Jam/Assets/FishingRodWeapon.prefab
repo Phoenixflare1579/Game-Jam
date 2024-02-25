@@ -132,7 +132,11 @@ MonoBehaviour:
   range: 10
   attackSpeed: 1
   hitColliders: []
-  closestTarget: {fileID: 0}
-  closestTargetDirection: {x: 0, y: 0, z: 0}
-  closestTargetDistance: 0
+  bestTarget: {fileID: 0}
+  bestTargetDirection: {x: 0, y: 0, z: 0}
+  bestTargetDistance: 0
   weapon: {fileID: 0}
+  projectile: {fileID: 0}
+  projectileSpeed: 2
+  projectileDamage: 2
+  timer: 0

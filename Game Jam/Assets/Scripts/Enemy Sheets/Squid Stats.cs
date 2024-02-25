@@ -11,5 +11,6 @@ public class SquidStats : EnemyStats
         attackDamage = 10;
         attackCooldown = 1;
         speed = 3;
+        EXP = 250;
     }
 }

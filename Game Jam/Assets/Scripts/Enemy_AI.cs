@@ -8,6 +8,7 @@ public class Enemy_AI : MonoBehaviour
     //private BoxCollider Ecollider;
 
     [SerializeField] private int HP;
+    [SerializeField] private int EXP;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackRange;
     [SerializeField] private int attackDamage;
@@ -71,7 +72,11 @@ public class Enemy_AI : MonoBehaviour
     void Attack(GameObject target)
     {
         PlayerStats targetStats = target.GetComponent<PlayerStats>();
-        targetStats.HP -= attackDamage;
+        targetStats.HP -= (attackDamage - targetStats.Def);
+        if ((attackDamage - targetStats.Def) < 1)
+        {
+            targetStats.HP -= 1;
+        }
     }
 
     public int getHP()
@@ -84,6 +89,7 @@ public class Enemy_AI : MonoBehaviour
         HP = _HP;
         if (HP <= 0)
         {
+            target.GetComponent<PlayerStats>().EXP += EXP;
             Destroy(gameObject);
         }
     }

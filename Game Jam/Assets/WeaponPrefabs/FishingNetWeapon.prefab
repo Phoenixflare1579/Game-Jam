@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   attackSpeed: 1
-  fishingNetSize: 4
+  fishingNetSize: 1
   hitColliders: []
   bestTarget: {fileID: 0}
   bestTargetDirection: {x: 0, y: 0, z: 0}

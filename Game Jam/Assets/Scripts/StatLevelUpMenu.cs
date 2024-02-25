@@ -25,21 +25,26 @@ public class StatLevelUpMenu : MonoBehaviour
     public void LevelMaxHp()
     {
         player.GetComponent<PlayerStats>().MaxHP += 10;
+        Time.timeScale = 1;
     }
     public void LevelAttack()
     {
         player.GetComponent<PlayerStats>().Attack += 1;
+        Time.timeScale = 1;
     }
     public void LevelDefense()
     {
         player.GetComponent<PlayerStats>().Def += 1;
+        Time.timeScale = 1;
     }
     public void LevelSpeed()
     { 
         player.GetComponent<PlayerStats>().Speed += 1;
+        Time.timeScale = 1;
     }
     public void LevelAttackSpeed()
     {
         player.GetComponent<PlayerStats>().AttackSpeed += 1;
+        Time.timeScale = 1;
     }
 }

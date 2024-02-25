@@ -36,8 +36,7 @@ public class PlayerStats : MonoBehaviour
         Level = 1;
         prevWeapon = 0;
 
-        WeaponLevelUp = GameObject.FindGameObjectWithTag("WeaponLevelUpPanel");
-        StatsLevelUp= GameObject.FindGameObjectWithTag("StatLevelUpPanel");
+
     }
 
     // Update is called once per frame

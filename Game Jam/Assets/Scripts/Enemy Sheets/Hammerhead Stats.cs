@@ -11,5 +11,6 @@ public class HammerheadStats : EnemyStats
         attackDamage = 15;
         attackCooldown = 2;
         speed = 1;
+        EXP = 500;
     }
 }

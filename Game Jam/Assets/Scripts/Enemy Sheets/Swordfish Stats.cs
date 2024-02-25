@@ -11,5 +11,6 @@ public class SwordfishStats : EnemyStats
         attackDamage = 7;
         attackCooldown = 1;
         speed = 3;
+        EXP = 15;
     }
 }

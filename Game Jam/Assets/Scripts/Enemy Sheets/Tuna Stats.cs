@@ -12,5 +12,6 @@ public class TunaStats : EnemyStats
         attackDamage = 5;
         attackCooldown = 1;
         speed = 3;
+        EXP = 10;
     }
 }

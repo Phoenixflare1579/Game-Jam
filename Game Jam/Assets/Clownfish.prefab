@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   HP: 30
+  EXP: 25
   attackCooldown: 1
   attackRange: 2
   attackDamage: 7

@@ -12,5 +12,6 @@ public class GoldfishStats : EnemyStats
         attackDamage = 3;
         attackCooldown = 0.5f;
         speed = 4;
+        EXP = 5;
     }
 }

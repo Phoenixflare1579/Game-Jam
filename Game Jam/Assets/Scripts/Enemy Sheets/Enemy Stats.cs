@@ -9,4 +9,18 @@ public class EnemyStats : MonoBehaviour
     public int attackDamage;
     public float speed;
     public int HP;
+    public int EXP;
+    public GameObject player;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    public void Update()
+    {
+        if (HP < 0) 
+        {
+            player.GetComponent<PlayerStats>().EXP += EXP;
+            Destroy(this.gameObject);
+        }
+    }
 }

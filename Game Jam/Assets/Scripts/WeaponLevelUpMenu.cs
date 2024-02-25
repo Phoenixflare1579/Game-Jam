@@ -46,7 +46,7 @@ public class WeaponLevelUp : MonoBehaviour
             int temp = player.GetComponent<PlayerStats>().prevWeapon; //store previous weapon into temp
             player.GetComponent<PlayerStats>().prevWeapon = player.GetComponent<PlayerStats>().Weapon; //store current weapon as new prev weapon
             player.GetComponent<PlayerStats>().Weapon = temp; //new weapon is previous weapon
-            
+            player.GetComponent<PlayerStats>().Upgrade = 0;
         }
         Time.timeScale = 1;
     }

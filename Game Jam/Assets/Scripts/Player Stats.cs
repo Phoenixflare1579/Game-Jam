@@ -36,6 +36,7 @@ public class PlayerStats : MonoBehaviour
         Upgrade = 0;
         Level = 1;
         prevWeapon = 0;
+        changeWeapon = true;
     }
 
     // Update is called once per frame
@@ -48,11 +49,11 @@ public class PlayerStats : MonoBehaviour
             {
                 if (i == Weapon)
                 {
-                    this.transform.GetChild(0).GetChild(i).gameObject.SetActive(true);
+                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(true);
                 }
                 else
                 {
-                    this.transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
+                    this.transform.GetChild(0).GetChild(i-1).gameObject.SetActive(false);
                 }
             }
             changeWeapon = false;
